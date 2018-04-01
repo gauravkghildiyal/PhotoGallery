@@ -1,0 +1,62 @@
+@keyframes scaleUpAndDisappear {
+    100%{
+        transform:scale(2);
+        opacity:0;
+    }
+}
+
+@keyframes scaleUpAndAppear{
+    from{
+        transform:scale(0);
+        opacity:0;
+    }
+}
+
+@keyframes scaleDownAndDisappear {
+    100%{
+        transform:scale(0);
+        opacity:0;
+    }
+}
+
+@keyframes scaleDownAndAppear{
+    from{
+        transform:scale(2);
+        opacity:0;
+    }
+}
+@keyframes fadeOutAndDisappear {
+    from{
+        opacity:1;
+        visibility:visible;
+    }
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+.scaleUpAndAppear{
+    animation:scaleUpAndAppear 1s ease;
+    animation-fill-mode:forwards;
+}
+
+.scaleUpAndDisappear{
+    animation:scaleUpAndDisappear 1s ease;
+    animation-fill-mode: forwards;
+}
+
+.scaleDownAndDisappear{
+    animation:scaleDownAndDisappear 1s ease;
+    animation-fill-mode: forwards;
+}
+
+.scaleDownAndAppear{
+    animation:scaleDownAndAppear 1s ease;
+    animation-fill-mode: forwards;
+}
+
+.fadeOutAndDisappear{
+    animation: fadeOutAndDisappear 2s ease-out;
+    animation-fill-mode:forwards;
+}

@@ -1,0 +1,160 @@
+/*********************************/
+/************SlideShow************/
+/*********************************/
+#slideshowWrapper{
+    background-color:rgba(19, 19, 47, 0.97);
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    display:none;
+    z-index:100;
+    transform:scale(1);
+    opacity:1;
+}
+
+#closeSlideshowButtonSvg{
+    position:absolute;
+    right:15px;
+    top:15px;
+    transition:all 0.5s ease;
+    z-index:1;
+    cursor:pointer;
+}
+#closeSlideshowButtonSvg:hover{
+    transform:scale(1.2);
+}
+#closeSlideshowButtonSvg:hover circle{
+    fill:red;
+}
+#closeSlideShowButtonSvg path{
+    transition:all 0.5s ease;
+}
+#closeSlideshowButtonSvg:hover path:nth-of-type(1){
+    fill:rgba(0,0,0,0.4);
+}
+#slideshow{
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin:auto;
+    width:100%;
+    height:500px;
+    overflow:hidden;
+}
+
+#slideshow > div {
+    position:absolute;
+    left:0;
+    right:0;
+    margin:auto;
+    width:60%;
+    overflow:hidden;
+    transition:transform 1s ease, opacity 1s ease, background-color 1s ease;
+    height:100%;
+    display:none;
+    animation-duration:1s;
+    animation-timing-function:linear;
+    animation-fill-mode:forwards;
+    transform-origin:bottom left;
+
+}
+#slideshow > div.active, #slideshow > div.next, #slideshow > div.prev{
+    display:block;
+}
+#slideshow > div.active{
+    transform:translateX(0) skewX(0);
+    opacity:1;
+    display:block;
+}
+
+#slideshow > div.prev , #slideshow > div.next{
+    opacity:0.3;
+    cursor:pointer
+}
+
+#slideshow > div.prev{
+    transform:translateX(-115%);
+}
+
+#slideshow > div.prev:after{
+    content: "prev";
+    display: block;
+    font-family: Metric;
+    font-size: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 4%;
+    margin: auto;
+    color: white;
+}
+
+#slideshow > div.next{
+    transform:translateX(115%);
+}
+
+#slideshow > div.next:after{
+    content: "next";
+    display: block;
+    font-family: Metric;
+    font-size: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 4%;
+    margin: auto;
+    color: white;
+}
+
+#slideshow > div.prevToPrev{
+    display:block;
+    transform:translateX(-230%);
+}
+
+#slideshow > div.nextToNext{
+    display:block;
+    transform:translateX(230%);
+}
+
+#slideshow > div.prev:hover{
+    opacity:0.5;
+    background-color:rgba(255,255,255,0.12);
+    transform:translateX(-112%);
+}
+#slideshow > div.next:hover{
+    opacity:0.5;
+    background-color:rgba(255,255,255,0.12);
+    transform:translateX(112%);
+}
+
+#slideshow > div > img{
+    top:0;
+    bottom:0;
+    margin:auto;
+    position:absolute;
+    width:100%;
+}
+
+@keyframes move-left {
+    0%{
+        transform:translateX(115%) skewX(0);
+        opacity:0.3;
+    }
+    68%{
+        transform:translateX(0) skewX(-10deg);
+    }
+    80%{
+    	transform:translateX(0) skewX(10deg);
+    }
+    88%{
+    	transform:translateX(0) skewX(10deg);
+    }
+    100%{
+    	transform:translateX(0) skewX(0deg);
+        opacity:1;
+    }
+}

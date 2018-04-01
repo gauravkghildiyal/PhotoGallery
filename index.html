@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Gallery</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- include the stylesheets -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/slideshow.css">
+    <link rel="stylesheet" href="css/transitions.css">
+</head>
+<body>
+    <!--[if lt IE 8]>
+    <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <canvas id = "background"></canvas>
+
+    <div id="welcomeScreen">
+        <span>
+            <svg id='welcomeSvg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 635.81006 208.23999">
+              <path fill="none" stroke="#000" stroke-width="1.475" d="M128.434 318.595q.48-1 .48-1.76 0-.64-.4-.64-.24 0-.56.16-.28.12-.44.28l-.2.16q-1.24 1.08-3.12 3.96-1.84 2.84-1.84 3.64 0 .16.08.16.24 0 1.04-.4.84-.4 2.36-1.88 1.56-1.48 2.6-3.68zm-1.8 9.16q2.12-1.96 6.08-6.48.12-.12.2-.12.08 0 .08.16 0 .76-.6 1.48-2.96 3.28-5.24 5.48-1.68 1.68-4 3.24-2.32 1.52-3.84 1.52-1.84 0-1.84-2.56 0-4.24 3.12-8.88 3.16-4.64 7.28-6.28 1.72-.72 3.12-.72 1.56 0 1.56 1.24 0 2.32-3.28 5.32-3.28 3-7.36 4.56-.16.04-.28.28-.6 1.64-.6 2.92 0 1.44 1.08 1.44 1.72 0 4.52-2.6zm-9.844-1.64q1.68-1.68 4.44-4.84.12-.12.2-.12.08 0 .08.16 0 .76-.6 1.48-2.96 3.28-5.24 5.48-4.72 4.4-6.2 4.4-.64 0-.64-.76t.8-2.52q.84-1.76 1.64-3.2.84-1.44 2.08-3.52 1.28-2.08 1.36-2.24.72-1.16.72-1.48 0-.2-.2-.2l-.56.2q-1.84 1.32-4.4 4.12-2.56 2.76-4.2 4.84l-1.64 2.12q-1.84 2.64-3.6 2.64-.52 0-.52-.32 0-.36.76-1.88.76-1.56 1.52-2.92l.76-1.36q.28-.56 1.36-2.4 1.12-1.88 1.84-3.2.76-1.36.76-1.68 0-.2-.16-.2l-.56.24q-1.88 1.32-4.44 4.12-2.56 2.76-4.16 4.84l-1.64 2.12q-1.88 2.6-3.6 2.6-.52 0-.52-.28 0-.36.76-1.88.76-1.56 1.52-2.92l.76-1.36 3.88-6.88q.96-1.8 2.32-3.2 1.36-1.44 2.84-1.44.32 0 .32.28 0 .24-.48 1.04-.44.76-1.32 2.16-.84 1.36-1.44 2.52-.36.68-.88 1.56-.48.84-.8 1.44-.32.56-.44.8t-.12.36q0 .08.08.08.12 0 .4-.28.76-.88 1.96-2.2 1.24-1.32 4.16-3.96 2.92-2.68 4.8-3.6.4-.2.8-.2.56 0 .56.56 0 1.04-2.36 5.4-.2.36-.84 1.4l-1.04 1.8q-.4.76-.4.96 0 .12.08.12.12 0 .4-.28.76-.88 1.96-2.2 1.24-1.32 4.12-3.96 2.92-2.68 4.8-3.6.48-.2.84-.2.6 0 .6.56 0 .16-.16.72-.16.52-.92 2.2-.76 1.64-2 3.64-3.04 4.68-3.04 5.88 0 .36.24.36.68 0 2.6-1.92zm-18.986-8.04q.36.08.36.24 0 .24-.32.56-.44.44-1.32 1.16-.84.72-1 .88l-.56.76q-.84 2.36-2.6 4.92-1.72 2.52-4.24 4.44-2.48 1.92-4.76 1.92-2.84 0-2.84-3.48 0-3.08 2-6.64 2-3.6 5.16-6.12 3.2-2.56 6.28-2.56 2.24 0 2.24 1.76 0 .96-.96 2.6-.04.04-.04.12 0 .08.08.08 1.48-.6 2.52-.64zm-3.8.96q.32-1.4.32-2.16 0-1.68-1.12-1.68-1.56 0-3.88 2.88t-4 6.48q-1.64 3.6-1.64 5.68 0 1.52 1.08 1.52 1.68 0 4-3.36 2.36-3.36 2.84-6.76-.04-.08-.04-.24 0-1.16 2.08-2.08.32-.12.36-.28zm-15.404 9.24q-1.8 1.72-4.08 3.24-2.24 1.48-3.8 1.48-1.84 0-1.84-2.84 0-3 2.12-6.64 2.12-3.68 5.36-6.28 3.28-2.6 6.2-2.6 1.56 0 1.56 1.16 0 2-2.6 4.52-.24.24-1.04.84t-1.12.6q-.2 0-.2-.2l.12-.36q1.6-2.84 1.6-4.32 0-.8-.52-.8-1.24 0-3.16 2.44-1.88 2.4-3.28 5.52-1.4 3.08-1.4 4.88 0 1.44 1.04 1.44 1.8 0 4.52-2.6 2.12-1.96 6.08-6.48.12-.12.2-.12.08 0 .08.16 0 .76-.6 1.48-2.96 3.28-5.24 5.48zm-6.09-15.6q2.84-2 5.08-4.52 2.28-2.56 3.44-4.68 1.2-2.16 1.8-3.72.6-1.56.6-2.24 0-.4-.28-.4-.56 0-1.36.8-1.52 1.52-3.44 4.4-1.92 2.88-3.12 4.96-1.16 2.04-3.04 5.48.16 0 .32-.08zm-4.28 13.44q1.68-1.68 4.44-4.84.12-.12.2-.12.08 0 .08.16 0 .76-.6 1.48-2.96 3.28-5.24 5.48-5 4.72-6.36 4.72-.6 0-.6-.84 0-.44.12-.96.08-.52.32-1.12.24-.64.4-1.04.2-.44.52-1.2.36-.8.48-1.08 1.12-2.52 6.88-13.28 7.88-14.36 14.48-17.64.96-.48 1.92-.48 1.12 0 1.12 1.04 0 2.4-1.64 5.28-1.64 2.84-4 5.24-2.36 2.4-4.64 4.2-2.24 1.8-3.88 2.72-.24.08-.44.36-1.76 2.84-3.44 6.12-1.68 3.24-2.52 5.12l-.8 1.84q-.2.6-.2.8 0 .36.28.36.8 0 3.12-2.32zm-7.843-7.52q.48-1 .48-1.76 0-.64-.4-.64-.24 0-.56.16-.28.12-.44.28l-.2.16q-1.24 1.08-3.12 3.96-1.84 2.84-1.84 3.64 0 .16.08.16.24 0 1.04-.4.84-.4 2.36-1.88 1.56-1.48 2.6-3.68zm-1.8 9.16q2.12-1.96 6.08-6.48.12-.12.2-.12.08 0 .08.16 0 .76-.6 1.48-2.96 3.28-5.24 5.48-1.68 1.68-4 3.24-2.32 1.52-3.84 1.52-1.84 0-1.84-2.56 0-4.24 3.12-8.88 3.16-4.64 7.28-6.28 1.72-.72 3.12-.72 1.56 0 1.56 1.24 0 2.32-3.28 5.32-3.28 3-7.36 4.56-.16.04-.28.28-.6 1.64-.6 2.92 0 1.44 1.08 1.44 1.72 0 4.52-2.6zm-17.712-9.56q.04-.08.04-.24 0-.12-.12-.12l-.36.16-4.08 5.08q-2.56 3.08-4.92 5.64-2.36 2.52-3.44 3.52l-1.08 1.04q-.48.32-.76.32-.4 0-.4-.76.28-3.4 2.04-10.16 1.28-4.76 3-9.4 1.72-4.68 2.84-6.96l1.08-2.32q.6-1.16 1.44-1.8.88-.68 1.4-.76l.56-.08q.44 0 .44.36 0 .2-.16.6-1.8 3.92-4.76 13.08-2.96 9.12-2.96 11.4 0 .56.28.56.2 0 .56-.36 4.72-5.24 9.28-11.36.6-.8 1.2-1.88.6-1.08.92-1.76l.32-.68q.76-2 1.56-3.84.8-1.84 1.2-2.68l.4-.8q.6-1.16 1.44-1.8.84-.68 1.4-.76l.56-.08q.4 0 .4.36l-.08.36q-.68 1.6-1.72 4.28t-3.16 9.24q-2.08 6.56-2.88 11.12.04.6.36.6.24 0 .56-.36 2.6-2.6 7.48-8.84 3.08-4 5.72-8.52 2.64-4.52 2.64-6.12 0-.92 1.24-1.52 1.2-.6 2.64-.6 1 0 1 .72 0 .92-1 2.64-.96 1.68-3 4.28-2.04 2.6-3.76 4.64-1.68 2.04-4.56 5.44-2.88 3.36-4.08 4.8-2.56 3.08-4.84 5.44-2.24 2.32-3.2 3.16l-1 .8q-.44.32-.72.32-.44 0-.44-.76.44-5.04 3.48-14.64z" style="line-height:125%;-inkscape-font-specification:'Aguafina Script, Normal';text-align:start" font-family="Aguafina Script" transform="matrix(5.92892 0 0 5.4456 -152.698 -1608.39)" font-size="40" letter-spacing="0" word-spacing="0"/>
+            </svg>
+        </span>
+    </div>
+
+    <section style="display:block">
+
+        <div id = "pagesContainer" class="clearFloat">
+            <div class="page page1 page-multi-show-display-state">
+                <div class="actualPage">
+                    <div class="headerContainer">
+                        <div id='aboutMeHeading' class="pageHeading">About Me</div>
+                    </div>
+                    <div id="aboutMeInfoWrapper">
+                        <div id="myImageWrapper">
+                            <img src="img/thatsMe.jpg" alt="">
+                        </div>
+                        <div id="aboutMeInfo">
+                            <table>
+                                <tr>
+                                    <th>Name:</th>
+                                    <td>Gaurav Kumar Ghildiyal</td>
+                                </tr>
+                                <tr>
+                                    <th>College Name:</th>
+                                    <td>National Institute of Technology, Kurukshetra</td>
+                                </tr>
+                                <tr>
+                                    <th>Stream:</th>
+                                    <td>Information Technology</td>
+                                </tr>
+                                <tr>
+                                    <th>Year:</th>
+                                    <td>1st</td>
+                                </tr>
+                                <tr>
+                                    <th>Roll No.:</th>
+                                    <td>11610565</td>
+                                </tr>
+                                <tr>
+                                    <th>Email:</th>
+                                    <td>jackspharaoh@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <th>Contact No.:</th>
+                                    <td>+91-9411197034</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="actualPageOverlay"></div>
+                </div>
+            </div>
+            <div class="page page2 page-multi-show-display-state">
+                <div class="actualPage">
+                    <div class="headerContainer">
+                        <div class="pageHeading">
+                            About The Website
+                        </div>
+                    </div>
+                    <div id="aboutTheWebsiteWrapper">
+                        <ul>
+                            <li>The website is scalable i.e. it is operational even from small screen devices.</li>
+                            <li>The slideshow can be opened by clicking on the SHOW button that appears when you hover over any image.</li>
+                            <li>During the slideshow, you can use the arrow keys to glide through the images and press the Esc key to exit the slideshow.</li>
+                            <li>The full screen button lets you switch to full screen from the website itself rather than finding the fullscreen option in your browser.</li>
+                            <li>The simple design and 3D navigation lets you switch between pages easily.</li>
+                            <li>For swiftness and cross browser support, the reflection of the pages that one sees during the Multi-page-display has been custom made using css and javascript without the use of any plugins or "-webkit-box-reflect".</li>
+                            <li>The movement of the shadow of the images with the cursor movement makes the page come to life.</li>
+                            <li>The animated background has been made using canvas animations and "puffs" (animating circles) have been mathematically modelled by making the radius and opacity an exponential function of pseudo-time for flawless transition of colors and "puffs".</li>
+                            <li>Use of fragment identifier introduced by the hash(<span style="font-family:Metric">#</span>) mark ensures that you can use the back button of your browser in a one page website like this which otherwise would not have been possible.</li>
+                        </ul>
+                    </div>
+                    <div class="actualPageOverlay"></div>
+                </div>
+            </div>
+            <div class="page page3 page-multi-show-display-state">
+                <div class="actualPage">
+                    <div class="">
+
+                    </div>
+                    <div class="headerContainer clearFloat">
+                        <div class="pageHeading">
+                            Gallery
+                        </div>
+                    </div>
+                    <div class="rowContainers">
+                        <div id="row1" class="clearFloat">
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Richard K. Grimm</div>
+                                <div class="imageWrapper">
+                                    <img src="img/2/adolescent beautiful child cute.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Helene Jensen</div>
+                                <div class="imageWrapper">
+                                    <img src="img/2/adult agriculture asia beautiful.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Nikolaj Mikaelsen</div>
+                                <div class="imageWrapper">
+                                    <img src="img/2/animal animals backlit beach.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Minik Johansen</div>
+                                <div class="imageWrapper">
+                                    <img src="img/2/architecture blur bridge buildings.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="row2" class="clearFloat">
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Shigeatsu Tanikawa</div>
+                                <div class="imageWrapper">
+                                    <img src="img/2/asians culture elderly enjoyment.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Gloria Hermansson</div>
+                                <div class="imageWrapper">
+                                    <img src="img/2/blur coffee cold cup.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Noelino Jiménez</div>
+                                <div class="imageWrapper">
+                                    <img src="img/2/brown haired woman leaning on edge of building in city.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Jan Holý</div>
+                                <div class="imageWrapper">
+                                    <img src="img/2/brown wooden house near by trees.jpg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="row3" class="clearFloat">
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Sofia Lawrence</div>
+                                <div class="imageWrapper">
+                                    <img src="img/2/close up of smart phone.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Samwise Sandheaver</div>
+                                <div class="imageWrapper">
+                                    <img src="img/2/mountains surrounded by fog.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Luca Schneider</div>
+                                <div class="imageWrapper">
+                                    <img src="img/2/person in middle of forest during daytime.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Zumorito</div>
+                                <div class="imageWrapper">
+                                    <img src="img/2/snow dawn landscape nature.jpeg" alt="">
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actualPageOverlay"></div>
+                </div>
+            </div>
+            <div class="page page4 page-multi-show-display-state">
+                <div class="actualPage">
+                    <div class="headerContainer clearFloat">
+                        <div class="pageHeading">
+                            Gallery
+                        </div>
+                    </div>
+                    <div class="rowContainers">
+                        <div id="row1" class="clearFloat">
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Hirokazu Kanada</div>
+                                <div class="imageWrapper">
+                                    <img src="img/1/pexels-photo-115553.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>D'Gara Edronh</div>
+                                <div class="imageWrapper">
+                                    <img src="img/1/pexels-photo.jpg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Kinji Kichida</div>
+                                <div class="imageWrapper">
+                                    <img src="img/1/pexels-photo-26695.jpg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Clementina Lori</div>
+                                <div class="imageWrapper">
+                                    <img src="img/1/pexels-photo-69022.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="row2" class="clearFloat">
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Paul D. Jacobson</div>
+                                <div class="imageWrapper">
+                                    <img src="img/1/pexels-photo-70234.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Mary Ramirez</div>
+                                <div class="imageWrapper">
+                                    <img src="img/1/pexels-photo-53902.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Christopher Baryshnikov</div>
+                                <div class="imageWrapper">
+                                    <img src="img/1/pexels-photo-125510.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Fred Jones</div>
+                                <div class="imageWrapper">
+                                    <img src="img/1/pexels-photo-134690.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="row3" class="clearFloat">
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Mason Ford</div>
+                                <div class="imageWrapper">
+                                    <img src="img/1/pexels-photo-205000.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>James E. Johnson</div>
+                                <div class="imageWrapper">
+                                    <img src="img/1/submarine-boat-sea-ocean-67575.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Damon Davis</div>
+                                <div class="imageWrapper">
+                                    <img src="img/1/pexels-photo-97096.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "imageBlockContainer">
+                                <div><span>by</span>Jon Chapman</div>
+                                <div class="imageWrapper">
+                                    <img src="img/1/pexels-photo-60217.jpeg" alt="" />
+                                    <div class="smallImageOverlay">
+                                        SHOW
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actualPageOverlay"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--******************SlideShow******************-->
+        <div id="slideshowWrapper">
+            <svg id = "closeSlideshowButtonSvg" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 507.2 507.2">
+                <circle cx="253.6" cy="253.6" r="253.6" fill="#F15249"/>
+                <path fill="#AD0E0E" d="M147.2 368L284 504.8c115.2-13.6 206.4-104 220.8-219.2L367.2 148l-220 220z"/>
+                <path fill="#FFF" d="M373.6 309.6c11.2 11.2 11.2 30.4 0 41.6l-22.4 22.4c-11.2 11.2-30.4 11.2-41.6 0l-176-176c-11.2-11.2-11.2-30.4 0-41.6l23.2-23.2c11.2-11.2 30.4-11.2 41.6 0l175.2 176.8z"/>
+                <path fill="#D6D6D6" d="M280.8 216L216 280.8l93.6 92.8c11.2 11.2 30.4 11.2 41.6 0l23.2-23.2c11.2-11.2 11.2-30.4 0-41.6L280.8 216z"/>
+                <path fill="#FFF" d="M309.6 133.6c11.2-11.2 30.4-11.2 41.6 0l23.2 23.2c11.2 11.2 11.2 30.4 0 41.6L197.6 373.6c-11.2 11.2-30.4 11.2-41.6 0l-22.4-22.4c-11.2-11.2-11.2-30.4 0-41.6l176-176z"/>
+            </svg>
+
+
+            <div id="slideshow" class="clearFloat">
+                <!-- Content will be added here dynamically through javascript -->
+            </div>
+        </div>
+    </section>
+
+    <footer class= = 'clearFloat' style="bottom:-40px">
+        <ul class = 'clearFloat'>
+            <li id = "multi-show-display">
+                <svg id='multiPageSvg' xmlns="http://www.w3.org/2000/svg" width="664380.926" height="489142.866" viewBox="0 0 622.85711 458.57144">
+                  <path fill="rgba(244, 0, 58, 0.83)" stroke="black" stroke-width="5" d="M0 0h485.714v345.714H0z"/>
+                  <path fill="rgba(229, 235, 0, 0.83)" stroke="black" stroke-width="5" d="M74.286 58.57H560v345.715H74.286z"/>
+                  <path fill="rgba(0, 102, 255, 0.83)" stroke="black" stroke-width="5" d="M137.143 112.857h485.714V458.57H137.143z"/>
+                </svg>
+            </li>
+        </ul>
+        <span id = 'fullscreenSvgContainer'>
+            <svg id = "fullscreenSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.198 358.198">
+                <path fill="#2488FF" d="M302.843 83.64l55.355 55.355L288.7 69.498 358.2 0H219.203l55.356 55.355-95.46 95.46-95.46-95.46L138.995 0H0l69.498 69.498L0 138.995 55.355 83.64l95.46 95.46-95.46 95.46L0 219.202v138.995L69.498 288.7l69.497 69.498-55.355-55.355 95.46-95.46 95.46 95.46-55.357 55.355L288.7 288.7 358.2 358.2V219.203l-55.355 55.356-95.46-95.46"/>
+                <path fill="#005ECE" d="M288.7 288.7L219.204 358.2h138.995M69.498 69.498L0 0v138.995M69.498 288.7L0 358.2h138.995M288.7 69.498l69.498 69.497V0"/>
+            </svg>
+        </span>
+    </footer>
+
+    <!-- Load the scripts -->
+    <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+    <script src="js/slideshow.js" type="text/javascript"></script>
+    <script src="js/background.js" type="text/javascript"></script>
+
+</body>
+</html>
