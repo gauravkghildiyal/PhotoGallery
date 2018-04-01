@@ -1,3 +1,3 @@
 # PhotoGallery
 
-## [Live Demo](https://ghillu.github.com/PhotoGallery/index.html)
+## [Live Demo](https://ghillu.github.io/PhotoGallery/)
